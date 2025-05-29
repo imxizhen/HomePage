@@ -587,7 +587,8 @@ body {
 }
 
 .skill {
-    padding: 5px;
+    padding: 25px;
+    padding-top: 5px;
     width: 100%;
 }
 
