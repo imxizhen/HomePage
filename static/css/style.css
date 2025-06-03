@@ -210,6 +210,29 @@ body {
     background: var(--item_bg_color);
 }
 
+/* 音乐 */
+.left-div-music {
+    flex-shrink: 10;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 4px;
+    backdrop-filter: blur(var(--card_filter));
+    background: var(--item_bg_color);
+}
+
+/* 摸鱼日历 */
+.left-dev-moyurili {
+    flex-shrink: 0;
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+    padding: 4px;
+    backdrop-filter: blur(var(--card_filter));
+    -webkit-backdrop-filter: blur(var(--card_filter));
+    background: var(--item_bg_color);
+}
+
 .left-des {
     display: flex;
     flex-direction: column;
@@ -270,7 +293,24 @@ body {
     color: var(--main_text_color);
 }
 
+/* 摸鱼日历 line2 */
+#line2 {
+    width: 100%;
+    height: auto;
+    font-size: 13px;
+    padding-left: 0px;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    display: flex; /* 设置为弹性容器 */
+    flex-direction: column; /* 子元素垂直排列 */
+    align-items: center; /* 水平居中 */
+}
 
+#line2 img {
+    max-width: 100%; /* 图片最大宽度为容器的宽度 */
+    height: auto; /* 图片高度根据宽度自动调整 */
+    border-radius: 8px;
+}
 
 .focus {
     width: 8px;
@@ -659,7 +699,7 @@ footer {
     .a {
 
         width: calc(50% - 18px);
-  margin: 9px;
+        margin: 9px;
 
     }
 
@@ -719,23 +759,29 @@ footer {
         display: none;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
-
-
-
+/* 时间代码 */
+#clock {
+    font-family: 'Arial', sans-serif;
+    font-size: 13px;
+    color: #faf6f6; /* 时钟文字颜色 */
+    justify-content: center; /* 水平居中 */
+}
+#lbl {
+    font-family: brushscriptmt;
+    color: #fdf7f7;
+    padding: 2px;
+    justify-content: center; /* 水平居中 */
+    line-height: 1.5;
+    height:auto;
+    font-size: 12px;
+}
+#date{
+    font-size: 12px;
+    justify-content: center; /* 水平居中 */
+}
+/* 时间代码结束 */
 
 .tc {
     position: fixed;

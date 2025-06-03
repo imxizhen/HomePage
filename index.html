@@ -17,6 +17,13 @@
 </head>
 
 <body>
+
+	<!--音乐相关引入-->
+	<link rel="stylesheet" href="./static/css/APlayer.min.css">  
+	<script src="./static/js/jquery.min.js"></script>
+	<script src="./static/js/APlayer.min.js"></script>
+	<script src="./static/js/Meting.min.js"></script>
+
 	<div id="zyyo-loading">
 		<div id="zyyo-loading-center">
 		</div>
@@ -72,6 +79,54 @@
 					NAS
 				</div>
 			</div>
+
+			<!-- 时间代码-->
+		    <div class="left-div left-time">
+				<ul id="line1">	
+					<div id="lbl"></div>
+					<div id="clock"></div>			
+				</ul>
+			</div>
+	    	<!-- 时间结束-->
+
+			<!-- 音乐挂件代码-->
+			<div class="left-div-music">
+				<div class="swiper-slide">
+					<div class="aplayer-wrap">
+						<meting-js
+							preload="none"
+							server="netease"
+							type="playlist"
+							id="13063954017">
+						</meting-js>  
+					</div>
+				</div>
+			</div>
+			<!-- 音乐挂件结束-->
+
+			<!-- 随机一言代码-->
+			<div class="left-div left-time">
+				<ul id="line1">
+						<div class="container">
+							<span id="hitokoto">正在获取中...</span>
+						</div>
+						<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>  
+				</ul>
+			</div>
+			<!-- 随机一言结束-->
+
+			<!-- 摸鱼日历-->
+			<div class="left-dev-moyurili">
+				<ul id="line2">
+					<li>
+						<div class="container">
+							<img id="moyuImage" src="https://dayu.qqsuu.cn/moyurili/apis.php" alt="摸鱼日历图片">
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- 摸鱼日历结束-->
+
 			<!-- 历程 -->
 			<div class="left-div left-time">
 				<ul id="line">
@@ -376,10 +431,65 @@
 </body>
 
 <script src="./static/js/script.js"> </script>
-
+<script src="./static/js/Meting.min.js"> </script>
 <!-- 51LA统计访问量
 <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
 <script>LA.init({ id: "KFqltKSkJgQTGD9l", ck: "KFqltKSkJgQTGD9l" })</script>
 -->
+
+<script>
+	function updateClock() {
+	  const now = new Date();
+	  const year = now.getFullYear();
+	  const month = (now.getMonth() + 1).toString().padStart(2, '0');
+	  const day = now.getDate().toString().padStart(2, '0');
+	  const hours = now.getHours().toString().padStart(2, '0');
+	  const minutes = now.getMinutes().toString().padStart(2, '0');
+	  document.getElementById('clock').textContent = `${year}年${month}月${day}日 ${hours}点${minutes}分`;
+	}
+  
+	// 初始更新时钟
+	updateClock();
+	// 每分钟更新时钟
+	setInterval(updateClock, 60000);
+</script>
+
+<script>
+    var weekday = new Array(7);
+    weekday[0] = "周日";
+    weekday[1] = "周一";
+    weekday[2] = "周二";
+    weekday[3] = "周三";
+    weekday[4] = "周四";
+    weekday[5] = "周五";
+    weekday[6] = "周六";
+
+    var today = new Date();
+    var hrs = today.getHours();
+    var dayOfWeek = weekday[today.getDay()];
+    var date = dayOfWeek+" "   ;
+
+    var greet;
+
+    if (hrs >= 0 && hrs <= 4)
+        greet = "🙃 凌晨好  ";
+    if (hrs >= 5 && hrs <= 8) 
+        greet = "😘 早上好  ";
+    if (hrs >= 9 && hrs <= 11) 
+        greet = "😜 上午好  ";
+    if (hrs >= 11 && hrs <= 13) 
+        greet = "🥳 中午好  ";
+    if (hrs >= 13 && hrs <= 17) 
+        greet = "🥰 下午好  ";
+    if (hrs >= 18 && hrs <= 19) 
+        greet = "🧐 傍晚好  ";
+    if (hrs >= 19 && hrs <= 22) 
+       greet = "🥳 晚上好  ";
+    if (hrs >= 22 && hrs <= 24) 
+       greet = "🥺 夜深了  ";
+
+    document.getElementById('lbl').innerHTML =
+        greet+=` 👉 今天是：${date}</div>`;
+</script> 
 
 </html>
