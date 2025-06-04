@@ -622,6 +622,22 @@ footer {
 }
 
 @media (max-width: 1150px) {
+    @supports (-webkit-backdrop-filter: none) {
+        /* 兼容safari浏览器的背景固定（safari不支持background-attachment:fixed） */
+        html:before {
+            content: ' ';
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('../img/bg.webp') center 0 no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+        }
+    }
+
     .a {
         width: calc(50% - 20px);
     }
@@ -634,11 +650,20 @@ footer {
 }
 
 @media (max-width: 800px) {
-    html {
-        background-size: cover;
-        background-position: center;
-        background-attachment: local; /* 移动设备上使用 local 替代 fixed */
-        overflow: auto;
+    @supports (-webkit-backdrop-filter: none) {
+        /* 兼容safari浏览器的背景固定（safari不支持background-attachment:fixed） */
+        html:before {
+            content: ' ';
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: url('../img/bg.webp') center 0 no-repeat;
+            background-size: cover;
+            background-attachment: scroll;
+        }
     }
 
     .zyyo-left {
