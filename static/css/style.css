@@ -635,7 +635,10 @@ footer {
 
 @media (max-width: 800px) {
     html {
+        background-size: cover;
+        background-position: center;
         background-attachment: local; /* 移动设备上使用 local 替代 fixed */
+        overflow: auto;
     }
 
     .zyyo-left {
