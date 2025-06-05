@@ -174,8 +174,6 @@ body {
     margin-top: 50px;
     background-size: cover;
     border-radius: 50%;
-    border: 0.5px solid #414040;
-    box-shadow: 10px 5px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .left-div {
@@ -325,11 +323,6 @@ body {
     font-size: 65px;
     font-weight: 800;
     margin: 20px 0;
-    /* text-shadow:-1px -1px #fff,1px 1px #333; */
-}
-
-.welcome_p {
-    text-shadow:1px 1px #777;
 }
 
 .index-logo {
@@ -341,11 +334,11 @@ body {
     aspect-ratio: 1/1;
     background-size: cover;
     border-radius: 50%;
-    border: 0.5px solid #414040;
-    box-shadow: 1px 1px 3px red,2px 2px 3px yellow,3px 3px 3px orange;
+    border: 0.5px solid #ffffff;
 }
 
 .description {
+
     font-size: 20px;
     margin-top: 7px;
 }
@@ -629,14 +622,9 @@ footer {
 }
 
 @media (max-width: 1150px) {
-    /* 兼容safari浏览器的背景固定（safari不支持background-attachment:fixed） */
     @supports (-webkit-backdrop-filter: none) {
-        /* 在此处取消 body 背景 */
-        body {
-            background: none;
-        }
-        /* 设置伪元素取代背景 */
-        html[data-theme="Light"]:before {
+        /* 兼容safari浏览器的背景固定（safari不支持background-attachment:fixed） */
+        html:before {
             content: ' ';
             position: fixed;
             z-index: -1;
@@ -644,7 +632,7 @@ footer {
             right: 0;
             bottom: 0;
             left: 0;
-            background: var(--main_bg_color) center center no-repeat;
+            background: url('../img/bg.webp') center 0 no-repeat;
             background-size: cover;
             background-attachment: scroll;
         }
@@ -662,14 +650,9 @@ footer {
 }
 
 @media (max-width: 800px) {
-    /* 兼容safari浏览器的背景固定（safari不支持background-attachment:fixed） */
     @supports (-webkit-backdrop-filter: none) {
-        /* 在此处取消 body 背景 */
-        body {
-            background: none;
-        }
-        /* 设置伪元素取代背景 */
-        html[data-theme="Light"]:before {
+        /* 兼容safari浏览器的背景固定（safari不支持background-attachment:fixed） */
+        html:before {
             content: ' ';
             position: fixed;
             z-index: -1;
@@ -677,7 +660,7 @@ footer {
             right: 0;
             bottom: 0;
             left: 0;
-            background: var(--main_bg_color) center center no-repeat;
+            background: url('../img/bg.webp') center 0 no-repeat;
             background-size: cover;
             background-attachment: scroll;
         }

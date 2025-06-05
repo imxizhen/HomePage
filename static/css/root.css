@@ -148,10 +148,10 @@
 
 /* 自定义主题，去除所有模糊效果 */
 html {
-
     --name: 主题6;
     --main_bg_color: url(../img/bg.webp);
-    --main_text_color: #eeeeee;
+    /* --main_text_color: #eeeeee; */
+    --main_text_color: #ffffff;
     --gradient: linear-gradient(120deg, #bd34fe, #e0321b 30%, #41d1ff 60%);
     --purple_text_color: #747bff;
     --text_bg_color: #00000040;
